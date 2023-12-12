@@ -1,16 +1,20 @@
 <template>
   <div class="single-card">
-    <!-- Your component content here -->
+    <img :src="img" alt="card-desc" />
+    <h3>{{ title }}</h3>
+    <div class="archetype">{{ archetype }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "SingleCard",
-  // Component properties and methods here
+  props: ["img", "title", "archetype"],
 };
 </script>
 
 <style scoped>
-/* Component styles here */
+.single-card {
+  width: 100%;
+}
 </style>

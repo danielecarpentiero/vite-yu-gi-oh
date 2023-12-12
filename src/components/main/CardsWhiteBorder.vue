@@ -1,14 +1,17 @@
 <template>
   <div class="cards-white-border">
+    <FoundCards />
     <InnerList />
   </div>
 </template>
 
 <script>
+import FoundCards from "./FoundCards.vue";
 import InnerList from "./InnerList.vue";
 export default {
   name: "CardsWhiteBorder",
   components: {
+    FoundCards,
     InnerList,
   },
 };

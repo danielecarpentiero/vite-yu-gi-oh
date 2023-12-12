@@ -7,7 +7,7 @@
 <script>
 import MainContainer from "./MainContainer.vue";
 import axios from "axios";
-import store from "../../store";
+import { store } from "../../store";
 export default {
   name: "Main",
   components: {

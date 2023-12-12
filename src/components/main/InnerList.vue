@@ -1,26 +1,36 @@
 <template>
   <div class="inner-list">
-    <div class="top">Found cards</div>
-    <div class="bottom">
-      <ul class="cards-list"></ul>
-    </div>
+    <ul>
+      <li
+        v-for="card in store.cards"
+        :img="card.card_images[0].image_url"
+        :title="card.name"
+        :archetype="card.archetype"
+      ></li>
+    </ul>
   </div>
 </template>
 
 <script>
+import SingleCard from "./SingleCard.vue";
+import { store } from "../../store";
 export default {
   name: "InnerList",
-  // Your component options here
+  components: {
+    SingleCard,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <style scoped>
 .inner-list {
-  .top {
-    background-color: black;
-    padding: 20px;
-    color: white;
-    font-weight: 700;
+  li {
+    height: 100px;
   }
 }
 </style>
