@@ -1,7 +1,9 @@
 <template>
   <div class="inner-list">
     <div class="top">Found cards</div>
-    <div class="bottom"></div>
+    <div class="bottom">
+      <ul class="cards-list"></ul>
+    </div>
   </div>
 </template>
 
