@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .found-cards {
-  width: 90%;
+  width: 100%;
   background-color: black;
   padding: 20px;
   color: white;

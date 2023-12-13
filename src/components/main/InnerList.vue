@@ -30,8 +30,14 @@ export default {
 
 <style scoped>
 .inner-list {
-  li {
-    height: 100px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: calc((100% / 5) - 40px);
+      list-style-type: none;
+      padding: 0 20px;
+    }
   }
 }
 </style>
