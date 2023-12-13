@@ -1,7 +1,7 @@
 <template>
   <select id="opzioni" name="opzioni">
     <option v-for="archetype in archetypes" value="opzione1">
-      {{ store.archetype }}
+      {{ archetype }}
     </option>
   </select>
 </template>
@@ -13,13 +13,15 @@ export default {
   name: "Select",
   data() {
     return {
+      length: 0,
       store,
       apiURL: "https://db.ygoprodeck.com/api/v7/archetypes.php",
     };
   },
   created() {
     axios.get(this.apiURL).then((response) => {
-      store.cards = response.data.archetypes;
+      store.archetypes = response.data.archetypes;
+      console.log(response.data.archetypes);
     });
   },
 };
