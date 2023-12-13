@@ -1,14 +1,27 @@
 <template>
   <select id="opzioni" name="opzioni">
-    <option value="opzione1">Opzione 1</option>
-    <option value="opzione2">Opzione 2</option>
-    <option value="opzione3">Opzione 3</option>
+    <option v-for="archetype in archetypes" value="opzione1">
+      {{ store.archetype }}
+    </option>
   </select>
 </template>
 
 <script>
+import axios from "axios";
+import { store } from "../../store";
 export default {
   name: "Select",
+  data() {
+    return {
+      store,
+      apiURL: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+    };
+  },
+  created() {
+    axios.get(this.apiURL).then((response) => {
+      store.cards = response.data.archetypes;
+    });
+  },
 };
 </script>
 
