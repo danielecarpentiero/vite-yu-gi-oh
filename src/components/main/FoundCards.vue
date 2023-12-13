@@ -23,5 +23,8 @@ export default {
   padding: 20px;
   color: white;
   font-weight: 700;
+  h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
 }
 </style>

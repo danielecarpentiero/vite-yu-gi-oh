@@ -24,6 +24,7 @@ header {
   align-items: center;
   h1 {
     font-size: 3rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 </style>
