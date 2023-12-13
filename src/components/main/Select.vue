@@ -1,6 +1,6 @@
 <template>
   <select
-    @change="$emit('select')"
+    @change="$emit('selectedArchetype')"
     v-model="store.selectedArchetype"
     id="archetypeSelect"
     name="archetypes"
