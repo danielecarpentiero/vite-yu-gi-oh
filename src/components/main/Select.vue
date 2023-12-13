@@ -1,7 +1,13 @@
 <template>
-  <select id="opzioni" name="opzioni">
-    <option v-for="archetype in archetypes" value="opzione1">
-      {{ archetype }}
+  <select
+    @change="$emit('select')"
+    v-model="store.selectedArchetype"
+    id="archetypeSelect"
+    name="archetypes"
+  >
+    <option selected value="">Choose an archetype</option>
+    <option v-for="pippo in store.archetypes">
+      {{ pippo.archetype_name }}
     </option>
   </select>
 </template>
@@ -13,15 +19,14 @@ export default {
   name: "Select",
   data() {
     return {
-      length: 0,
       store,
+      length: 0,
       apiURL: "https://db.ygoprodeck.com/api/v7/archetypes.php",
     };
   },
   created() {
     axios.get(this.apiURL).then((response) => {
-      store.archetypes = response.data.archetypes;
-      console.log(response.data.archetypes);
+      store.archetypes = response.data;
     });
   },
 };
